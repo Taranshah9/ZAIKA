@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 export const dbConnection = () => {
   mongoose
-    .connect('mongodb+srv://taranshah9:Riddhima26@cluster0.ttapv4w.mongodb.net/?retryWrites=true', {
+    .connect('process.env.MONGO_URI', {
       dbName: "RESERVATIONS",
     })
     .then(() => {
