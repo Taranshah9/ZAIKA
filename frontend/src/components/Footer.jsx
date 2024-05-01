@@ -13,7 +13,7 @@ const Footer = () => {
         </div>
         <div className="banner">
           <div className="left">
-            <p>Developed By Taran,Vinit,Vedant</p>
+            <p>Developed By Taran,Vineet,Vedant</p>
           </div>
           <div className="right">
             <p>All Rights Reserved By TVVZAIKA.</p>
