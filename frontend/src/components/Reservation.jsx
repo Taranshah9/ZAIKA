@@ -12,14 +12,15 @@ const Reservation = () => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
   const [phone, setPhone] = useState(0);
+  const [people, setPeople] = useState(0);
   const navigate = useNavigate();
 
   const handleReservation = async (e) => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "https://zaika-z1zs.onrender.com/api/v1/reservation/send",
-        { firstName, lastName, email, phone, date, time },
+        "http://localhost:4000/api/v1/reservation/send",
+        { firstName, lastName, email, phone, date, time,people },
         {
           headers: {
             "Content-Type": "application/json",
@@ -31,6 +32,7 @@ const Reservation = () => {
       setFirstName("");
       setLastName("");
       setPhone(0);
+      setPeople(0);
       setEmail("");
       setTime("");
       setDate("");
@@ -92,6 +94,12 @@ const Reservation = () => {
                   placeholder="Phone"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
+                />
+                <input
+                  type="number"
+                  placeholder="People"
+                  value={people}
+                  onChange={(e) => setPeople(e.target.value)}
                 />
               </div>
               <button type="submit" onClick={handleReservation}>
